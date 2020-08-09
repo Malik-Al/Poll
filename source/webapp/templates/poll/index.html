@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    <li><a href="{% url 'poll_create' %}">Добавить Опрос</a></li>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <h1 class="center">Опросы</h1>
+    <br>
+    {% for poll in polls %}
+        <div class="center">
+        <h2>{{ poll.question }}</h2>
+        <p>{{ poll.created_at }}</p>
+        </div>
+        <a href="{% url 'poll_view' poll.pk %}">Просмотр</a>
+        <a href="{% url 'poll_update' poll.pk %}">Редактирование</a>
+        <a href="{% url 'poll_delete' poll.pk %}">Удаление</a>
+        <hr>
+    {% endfor %}
+
+
+
+{% endblock%}
