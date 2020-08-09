@@ -13,9 +13,9 @@ class PollIndexView(ListView):
     template_name = 'poll/index.html'
     model = Poll
     context_object_name = 'polls'
+    ordering = ['-created_at']
 
-    def get_queryset(self):
-        return Poll.objects.all().order_by('-created_at')
+
 
 
 
