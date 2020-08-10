@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from webapp.views import PollIndexView, PollView, PollCreateView, PollUpdateView, PollDeleteView
+from webapp.views.poll import PollIndexView, PollView, PollCreateView, PollUpdateView, PollDeleteView
 
 urlpatterns = [
     path('', PollIndexView.as_view(), name='index'),

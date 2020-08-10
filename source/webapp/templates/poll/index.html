@@ -4,18 +4,15 @@
 {% endblock %}
 
 
-
 {% block content %}
 
     <h1 class="center">Опросы</h1>
-
     {% if is_paginated %}
          {% include 'partial/pagination.html' %}
     {% endif %}
-
     <br>
     {% for poll in polls %}
-        <div class="center">
+        <div>
         <h2>{{ poll.question }}</h2>
         <p>{{ poll.created_at|date:"d.m.Y H:i:s" }}</p>
         </div>
@@ -25,8 +22,5 @@
         <hr>
     {% endfor %}
 
-{% if is_paginated %}
-   {% include 'partial/pagination.html' %}
-{% endif %}
 
 {% endblock%}

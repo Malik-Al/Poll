@@ -2,19 +2,13 @@
 
 
 {% block menu %}
-
+        <a href="{% url 'poll_update' poll.pk %}">Редактирование</a>
+        <a href="{% url 'poll_delete' poll.pk %}">Удаление</a>
 {% endblock %}
 
+
+
 {% block content %}
-    {% if is_paginated %}
-         {% include 'partial/pagination.html' %}
-    {% endif %}
-
-        <h1 >Опрос: {{ poll.question }}</h1>
-        <p>created_at: {{ poll.created_at|date:'d.n.Y H:i:s' }}</p>
-
-    {% if is_paginated %}
-         {% include 'partial/pagination.html' %}
-    {% endif %}
-
+    <h1 >Опрос: {{ poll.question }}</h1>
+    <p>created_at: {{ poll.created_at|date:'d.n.Y H:i:s' }}</p>
 {% endblock %}
