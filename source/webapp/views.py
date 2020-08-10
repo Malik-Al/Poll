@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView, DetailView
 
@@ -14,6 +14,8 @@ class PollIndexView(ListView):
     model = Poll
     context_object_name = 'polls'
     ordering = ['-created_at']
+    paginate_by = 2
+    paginate_orphans = 1
 
 
 

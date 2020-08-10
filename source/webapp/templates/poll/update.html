@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="crearet"> Update Task</h1>
+<h1 class="crearet"> Update Poll</h1>
 <form method="POST" action="{% url "poll_update" poll.pk%}">
    {% include 'partial/form.html' with button_text='Update'%}
 </form>
