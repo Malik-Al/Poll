@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+    {% block title %}Поменять вариант ответа{% endblock %}
+
+{% block menu %}
+    <li><a href="{% url 'poll_view'  choice.poll.pk %}">Просмотр</a></li>
+{% endblock %}
+
+{% block content %}
+<h1 class="crearet"> Поменять ответ</h1>
+    <p>Опрос: {{ choice.poll }}</p>
+<form method="POST" action="{% url "choice_update" choice.pk%}">
+   {% include 'partial/form.html' with button_text='Update'%}
+</form>
+{% endblock %}

@@ -14,3 +14,13 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Answer(models.Model):
+    poll = models.ForeignKey('webapp.Poll', verbose_name='Опрос', on_delete=models.CASCADE, related_name='answers')
+    choice = models.ForeignKey('webapp.Choice', verbose_name="Вариант ответа", on_delete=models.CASCADE,
+                               related_name='answers')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+
+    def __str__(self):
+        return '{} - {} '.format(self.poll, self.choice)

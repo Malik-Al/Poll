@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+    {% block title %}Добавить вариант ответа{% endblock %}
+
+
+{#{% block menu %}#}
+{#    <li><a href="{% url 'poll_detail' poll.pk %}">Назад</a></li>#}
+{#{% endblock %}#}
+
+{% block content %}
+
+<h1 class="crearet"> Добавить ответа</h1>
+    <p>Опрос: {{ poll }}</p>
+<form method="POST" action="{% url "choice_create" %}">
+   {% include 'partial/form.html' with button_text='Добавить' %}
+</form>
+{% endblock %}
+
+</body>
+</html>
+
+

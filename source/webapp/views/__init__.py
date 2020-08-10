@@ -1,1 +1,2 @@
-from .poll import ListView, CreateView, UpdateView, DeleteView, DetailView
+from .poll import PollCreateView, PollUpdateView,PollDeleteView, PollView
+from .choice import ChoiceUpdateView, ChoiceDeleteView, ChoiceCreateView

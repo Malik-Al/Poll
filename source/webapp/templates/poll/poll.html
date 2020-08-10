@@ -11,4 +11,12 @@
 {% block content %}
     <h1 >Опрос: {{ poll.question }}</h1>
     <p>created_at: {{ poll.created_at|date:'d.n.Y H:i:s' }}</p>
+
+    {% for choice in poll.choices.all %}
+        <li>{{ choice.text }}</li>
+        <a href="{% url 'choice_update' choice.pk %}">Редактирование</a>
+        <a href="{% url 'choice_delete' choice.pk %}">Удаление</a>
+
+    {% endfor %}
+    <p class="text-center"><a href="{% url 'choice_create' %}">Добавить вариант</a></p>
 {% endblock %}
